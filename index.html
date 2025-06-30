@@ -21,7 +21,7 @@
 
 
 
-<div id="oper"></div>
+
 <div id="vid" style="height:100%;width:100%"></div>
 <script>
 
@@ -31,7 +31,7 @@ function getQueryParam(param) {
     }
 
     const videoSource = getQueryParam('url') || 'https://sportsleading.online/live/stream_e1.m3u8';
-pr.Player({
+clappr.Player({
       mimeType: 'application/x-mpegURL',
       autoPlay: true,
       height: '100%',
@@ -44,14 +44,7 @@ pr.Player({
       watermarkLink: '',
       position: 'top-right',
       
-      playback: {
-        hlsjsConfig: {
-          p2pConfig: {
-            logLevel: 'debug',
-            live: true
-          }
-        }
-      }
+      
     });
 </script>
 
