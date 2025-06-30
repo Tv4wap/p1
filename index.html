@@ -31,18 +31,28 @@ function getQueryParam(param) {
     }
 
     const videoSource = getQueryParam('url') || 'https://sportsleading.online/live/stream_e1.m3u8';
-const player = new Clappr.Player({
- source: "videoSource",
- mimeType: "application/x-mpegURL",
-maxBufferLength: 2000000,
- autoPlay: true, 
-autoPlayVisible: 'partial',
-mute: true,
- width: "100%",
-height:"100%",
-poster:"https://blogger.googleusercontent.com/img/a/AVvXsEiGqaZeRBZ6Y7yV5ZYSRiNRhBa5q9_EMx7R5TJcHd3XJwwHh2YhNOGt76Y4vEcUIjvIaA7W-Tw1RyMLP-4WZwVHA4mk18zwXl7HdSL5WabprIasDOWJO7jpL0zTQB4p_y7X0Rv0xwe-cJ-GvxofAgeRp2FIiNgB90n_b8Cqw0sAaZqVhJg_fi9UyfSO8KY", 
- plugins: {"core": [LevelSelector]}, 
- parentId: "#vid"});
+pr.Player({
+      mimeType: 'application/x-mpegURL',
+      autoPlay: true,
+      height: '100%',
+      width: '100%',
+      plugins: {'core': [LevelSelector]}, 
+ parentId: '#vid', 
+      source: videoSource,
+      poster: '',
+      watermark: '',
+      watermarkLink: '',
+      position: 'top-right',
+      
+      playback: {
+        hlsjsConfig: {
+          p2pConfig: {
+            logLevel: 'debug',
+            live: true
+          }
+        }
+      }
+    });
 </script>
 
 <style>body{position: absolute;height:100%;width:100%;margin:0;overflow:hidden;background:#fff}vid{fullscreen:allow;width:100%;height:100%;overflow:hidden;position: absolute;}
